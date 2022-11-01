@@ -27,26 +27,6 @@
         </template>
       </SfBannerGrid>
     </LazyHydrate>
-    <LazyHydrate when-visible>
-      <RelatedProducts
-        :products="products"
-        :loading="productsLoading"
-        title="Match it with"
-      />
-    </LazyHydrate>
-
-    <LazyHydrate when-visible>
-      <SfCallToAction
-        title="Subscribe to Newsletters"
-        button-text="Subscribe"
-        description="Be aware of upcoming sales and events. Receive gifts and special offers!"
-        image="https://cdn.shopify.com/s/files/1/0407/1902/4288/files/newsletter_1240x202.jpg?v=1616496568"
-        class="call-to-action"
-      />
-    </LazyHydrate>
-    <LazyHydrate when-visible>
-      <MobileStoreBanner />
-    </LazyHydrate>
   </div>
 </template>
 <script type="module">
@@ -106,91 +86,65 @@ export default {
     return {
       heroes: [
         {
-          title: 'Colorful summer dresses are already in store',
-          subtitle: 'SUMMER COLLECTION 2021',
+          title: '🍉🍉🍉🍉 Watermelon',
+          subtitle: 'SUMMER COLLECTION 2022',
           buttonText: 'Learn more',
           background: '#eceff1',
           image: {
-            mobile:
-              'https://cdn.shopify.com/s/files/1/0407/1902/4288/files/bannerB_328x224.jpg',
             desktop:
-              'https://cdn.shopify.com/s/files/1/0407/1902/4288/files/bannerB_1240x400.jpg'
+              '/homepage/goodmelon.jpg'
           },
           link: '/c/women/women-clothing-shirts'
         },
         {
-          title: 'Colorful summer dresses are already in store',
-          subtitle: 'SUMMER COLLECTION 2021',
+          title: 'Paprika 🫑',
+          subtitle: 'SUMMER COLLECTION 2022',
           buttonText: 'Learn more',
-          background: '#fce4ec',
+          background: '#eceff1',
           image: {
-            mobile:
-              'https://cdn.shopify.com/s/files/1/0407/1902/4288/files/bannerH_328x224.jpg',
             desktop:
-              'https://cdn.shopify.com/s/files/1/0407/1902/4288/files/bannerH_1240x400.jpg'
+              '/homepage/pepper.jpg'
           },
-          link: '/c/women/women-clothing-dresses'
+          link: '/c/women/women-clothing-shirts'
         },
-        {
-          title: 'Colorful summer dresses are already in store',
-          subtitle: 'SUMMER COLLECTION 2021',
-          buttonText: 'Learn more',
-          background: '#efebe9',
-          image: {
-            mobile:
-              'https://cdn.shopify.com/s/files/1/0407/1902/4288/files/bannerA_328x224.jpg',
-            desktop:
-              'https://cdn.shopify.com/s/files/1/0407/1902/4288/files/bannerA_1240x400.jpg'
-          },
-          link: '/c/women/women-shoes-sandals',
-          className:
-            'sf-hero-item--position-bg-top-left sf-hero-item--align-right'
-        }
       ],
       banners: [
         {
           slot: 'banner-A',
-          subtitle: 'Dresses',
+          subtitle: 'Fruit cocktails',
           title: 'Cocktail & Party',
-          description:
-            'Find stunning women\'s cocktail dresses and party dresses. Stand out in lace and metallic cocktail dresses from all your favorite brands.',
           buttonText: 'Shop now',
           image: {
-            mobile:
-              'https://cdn.shopify.com/s/files/1/0407/1902/4288/files/bannerB_328x343.jpg',
             desktop:
-              'https://cdn.shopify.com/s/files/1/0407/1902/4288/files/bannerF_332x840.jpg'
+              '/homepage/cocktail.jpg'
           },
-          class: 'sf-banner--slim desktop-only',
-          link: '/c/women/women-clothing-skirts'
+          class: 'sf-banner--slim desktop-only banner__light',
+          link: '/c/women/women-clothing-skirts',
         },
         {
           slot: 'banner-B',
-          subtitle: 'Dresses',
-          title: 'Linen Dresses',
+          subtitle: 'Tea',
+          title: 'Heavenly Tea',
           description:
-            'Find stunning women\'s cocktail dresses and party dresses. Stand out in lace and metallic cocktail dresses from all your favorite brands.',
+            'Tea so good you will ascend',
           buttonText: 'Shop now',
           image: {
-            mobile:
-              'https://cdn.shopify.com/s/files/1/0407/1902/4288/files/bannerE_328x343.jpg',
             desktop:
-              'https://cdn.shopify.com/s/files/1/0407/1902/4288/files/bannerE_496x840.jpg'
+              '/homepage/tea.png'
           },
-          class: 'sf-banner--slim banner-central desktop-only',
+          class: 'sf-banner--slim banner-central desktop-only banner__light',
           link: '/c/women/women-clothing-dresses'
         },
         {
           slot: 'banner-C',
-          subtitle: 'T-Shirts',
-          title: 'The Office Life',
+          subtitle: 'Coffee',
+          title: 'Frog recommends',
+          buttonText: 'Buy coffee',
           image: {
-            mobile:
-              'https://cdn.shopify.com/s/files/1/0407/1902/4288/files/bannerC_328x343.jpg',
             desktop:
-              'https://cdn.shopify.com/s/files/1/0407/1902/4288/files/bannerC_332x400.jpg'
+              '/homepage/coffefrog.png'
           },
-          class: 'sf-banner--slim banner__tshirt',
+          class: 'sf-banner--slim--font-weight-light banner__light',
           link: '/c/women/women-clothing-shirts'
         },
         {
@@ -203,7 +157,7 @@ export default {
             desktop:
               'https://cdn.shopify.com/s/files/1/0407/1902/4288/files/bannerG_332x400.jpg'
           },
-          class: 'sf-banner--slim',
+          class: 'sf-banner--slim c-white',
           link: '/c/women/women-shoes-sandals'
         }
       ]
@@ -269,8 +223,10 @@ export default {
   }
 }
 .banner {
-  &__tshirt {
-    background-position: left;
+  &__light {
+    --banner-title-color: var(--c-white);
+    --banner-subtitle-color: var(--c-light);
+    --banner-description-color: var(--c-white);
   }
   &-central {
     @include for-desktop {

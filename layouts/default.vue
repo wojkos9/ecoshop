@@ -15,7 +15,6 @@
     <LazyHydrate when-visible>
       <Notification />
     </LazyHydrate>
-    <TopBar class="desktop-only" />
     <AppHeader
       :cart-total-items="getCartTotalItems"
       :is-user-authenticated="isAuthenticated"
